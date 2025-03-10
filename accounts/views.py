@@ -53,7 +53,7 @@ def logout_user(request):
     logout(request)
     return redirect('login')
 
-@login_required(login_url='login')
+@login_required(login_url='/login')
 def home(request):
     orders = Order.objects.all() # Read
     customers = Customer.objects.all() 
