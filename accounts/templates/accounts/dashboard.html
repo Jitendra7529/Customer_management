@@ -1,0 +1,99 @@
+{% extends 'accounts/main.html' %}
+
+{% block content %}
+
+{% include 'accounts/status.html' %}
+
+<div class="row mt-4">
+    <div class="col-md-5">
+        <div class="card">
+            <div class="card-header bg-light">
+                <h5 class="mb-0">
+                    <i class="fas fa-users mr-2"></i> Customers
+                </h5>
+            </div>
+            <div class="card-body">
+                <a class="btn btn-primary btn-block mb-3" href="{% url 'create_customer' %}">
+                    <i class="fas fa-plus-circle mr-1"></i> Create Customer
+                </a>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Actions</th>
+                                <th>Customer</th>
+                                <th>Phone</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for customer in customers %}
+                            <tr>
+                                <td>
+                                    <a class="btn btn-sm btn-info" href="{% url 'customer' customer.id %}">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                </td>
+                                <td>{{customer.name}}</td>
+                                <td>{{customer.phone}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-7">
+        <div class="card">
+            <div class="card-header bg-light">
+                <h5 class="mb-0">
+                    <i class="fas fa-shopping-cart mr-2"></i> Last 5 Orders
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th colspan="2">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for order in orders %}
+                            <tr>
+                                <td>{{order.product}}</td>
+                                <td>{{order.date_created|date:"M d, Y"}}</td>
+                                <td>
+                                    {% if order.status == 'Delivered' %}
+                                    <span class="badge badge-success">{{order.status}}</span>
+                                    {% elif order.status == 'Pending' %}
+                                    <span class="badge badge-warning">{{order.status}}</span>
+                                    {% else %}
+                                    <span class="badge badge-info">{{order.status}}</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <a class="btn btn-sm btn-info" href="{% url 'update_order' order.id %}">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-sm btn-danger" href="{% url 'delete_order' order.id %}">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
