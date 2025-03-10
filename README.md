@@ -1,27 +1,27 @@
-# 📚 Student Management System
+# 📚 Customer Management System
 
-A **basic Customer Management System** designed to perform CRUD (Create, Read, Update, Delete) operations on student records. This project is ideal for beginners to understand how to manage data efficiently.
+A **basic Customer Management System** designed to perform CRUD (Create, Read, Update, Delete) operations on customer records. This project is ideal for beginners to understand how to manage customer data efficiently. This project also tell us the number of orders the customer has given along with the status of the orders respectively.
 
 ## 🚀 Features
-✅ Add new students  
-✅ Update existing student details  
-✅ Delete student records  
-✅ View all student information in a structured format  
+✅ Add new customers  
+✅ Update existing customer details  
+✅ Delete customer records  
+✅ View all customer information in a structured format  
 ✅ Simple and user-friendly interface  
 
 ## 🛠 Technologies Used
 - Django
 - SQLite
-- HTML, CSS 
+- HTML, CSS
 
 ## 📦 Installation & Setup
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/Jitendra7529/Student_management.git
+   git clone https://github.com/Jitendra7529/Customer_management.git
    ```
 2. **Navigate to the project folder:**
    ```bash
-   cd Student_management
+   cd Customer_management
    ```
 3. **Install dependencies (if applicable):**
    ```bash
@@ -33,7 +33,7 @@ A **basic Customer Management System** designed to perform CRUD (Create, Read, U
    ```
 
 ## 📌 Usage
-- Run the application and start adding student records.
+- Run the application and start adding customer records.
 - Modify or delete records as needed.
 
 ## 🤝 Contributing
@@ -41,6 +41,5 @@ If you’d like to improve this project, feel free to fork the repository and su
 
 ---
 
-🔹 **Author: Jitendra Joshi 
-🔹 **GitHub Repository: https://github.com/Jitendra7529/Student_management
-
+🔹 **Author: Jitendra Joshi**  
+🔹 **GitHub Repository: https://github.com/Jitendra7529/Customer_management**
